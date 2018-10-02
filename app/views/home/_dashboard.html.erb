@@ -1,10 +1,11 @@
 <section class="section pt3">
   <p class="title is-5 border-bottom pb3 has-text centered">Welcome <%= current_user.name %> </p>
   <div class="columns">
+
     <div class="column-border-right ph4">
       <div class="level">
         <div class="level-left">
-          <h3 class="subtitle is-5">My Projects <span class="tag is-rounded"0</span></h3>
+          <h3 class="subtitle is-5">My Projects <span class="tag is-rounded"><%= @projects.count %></span></h3>
         </div>
         <div class="level-right">
           <p class="field">
@@ -15,22 +16,24 @@
         </div>
       </div>
       <hr />
+      <% @projects.each do |project| %>
       <div class="content border-bottom pb4">
         <p class="title is-4">
-          <%= link_to 'Project Name', '#' %>
+          <%= link_to project.name, project %>
         </p>
         <p class="subtitle is-6">
-          <%= link_to 'Project Team Name', '#' %>
+          <%= link_to project.team.name, project.team %>
         </p>
-        <p class="f6">Created by Name</p>
+        <p class="f6">Created by: <%= project.user.name %></p>
       </div>
-    </div>
+      <% end %>
 
+    </div>
     <div class="column border-right ph4"
 
     <div class="level">
       <div class="level-left">
-        <h3 class="subtitle is-5">My Teams <span class="tag is-rounded"0</span></h3>
+        <h3 class="subtitle is-5">My Teams <span class="tag is-rounded"><%= @teams.count %></span></h3>
       </div>
       <div class="level-right">
         <p class="field">
@@ -41,13 +44,15 @@
       </div>
     </div>
     <hr />
-    <div class="content border-bottom pb4">
-      <p class="title is-4">
-        <%= link_to 'Team Name', '#' %>
-      </p>
-      <p class="subtitle is-6">0 Members</p>
-      <p class="f6">John Doe, Ronald Tolkien</p>
-    </div>
+    <% @teams.each do |team| %>
+      <div class="content border-bottom pb4">
+        <p class="title is-4">
+          <%= link_to team.name, team %>
+        </p>
+        <p class="subtitle is-6"><%= team.user.count %> Members</p>
+        <p class="f6"><%= safe_join(team.users.map { |user| user.name }, ', ') %></p>
+      </div>
+    <% end %>
   </div>
 
   <div class="column ph4">
