@@ -12,7 +12,7 @@ document.addEventListener('turbolinks:load', () => {
 
     var id = element.dataset.id
     var team = JSON.parse(element.dataset.team)
-    var users_attributes = JSON.parse(element.dataset.usersAttributes)
+    var users_attributes = JSON.parse(element.dataset.userAttributes)
     users_attributes.forEach(function(user) { user._destroy = null })
     team.users_attributes = users_attributes
 

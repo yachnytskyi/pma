@@ -49,7 +49,7 @@
         <p class="title is-4">
           <%= link_to team.name, team %>
         </p>
-        <p class="subtitle is-6"><%= team.user.count %> Members</p>
+        <p class="subtitle is-6"><%= team.users.count %> Members</p>
         <p class="f6"><%= safe_join(team.users.map { |user| user.name }, ', ') %></p>
       </div>
     <% end %>
