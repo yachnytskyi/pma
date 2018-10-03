@@ -47,6 +47,8 @@ gem 'public_activity'
 gem 'pg'
 gem "figaro"
 
+gem 'webpacker', '~> 3.5'
+
 gem 'bootsnap'
 
 group :development, :test do
