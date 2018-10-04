@@ -1,2 +1,3 @@
-class ApplicationController < ActionController::Base
+lass ApplicationController < ActionController::Base
+  include PublicActivity::StoreController
 end
