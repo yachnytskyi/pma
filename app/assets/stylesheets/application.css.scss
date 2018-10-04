@@ -25,10 +25,27 @@
   --spacing-extra-extra-extra-large: 16rem;
 }
 
- @import "bulma";
+@import "froala_editor.min";
+@import "froala_style.min";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import 'plugins/char_counter.min.css';
+@import 'plugins/code_view.min.css';
+@import 'plugins/colors.min.css';
+@import 'plugins/emoticons.min.css';
+@import 'plugins/file.min.css';
+@import 'plugins/fullscreen.min.css';
+@import 'plugins/help.min.css';
+@import 'plugins/image_manager.min.css';
+@import 'plugins/image.min.css';
+@import 'plugins/line_breaker.min.css';
+@import 'plugins/quick_insert.min.css';
+@import 'plugins/special_characters.min.css';
+@import 'plugins/table.min.css';
+@import 'plugins/video.min.css';
+@import "bulma";
 
-
- /* Functional Styles: http://tachyons.io/docs/ */
+/* Functional Styles: http://tachyons.io/docs/ */
 
 /* Padding http://tachyons.io/docs/layout/spacing/ */
 .pa0 { padding: var(--spacing-none); }
@@ -176,13 +193,13 @@
 
 .border-radius-3 { border-radius: 3px; }
 
- .notification {
-   border-radius: 0;
- }
+.notification {
+	border-radius: 0;
+}
 
- .notification:not(last-child) {
-   margin-bottom: 0;
- }
+.notification:not(:last-child) {
+	margin-bottom: 0;
+}
 
- @import "teams";
- @import "projects";
+@import "teams";
+@import "projects";
